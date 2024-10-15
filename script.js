@@ -22,25 +22,25 @@ const getPokemon = async () => {
         const data = await res.json();
 
         //set data
-        pokemonName.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`;
-        pokemonId.textContent = `#${data.id}`;
+        pokemonName.textContent = `Name: ${data.name[0].toUpperCase()}${data.name.slice(1)}`;
+        pokemonId.textContent = `Id: #${data.id}`;
         weight.textContent = `Weight: ${data.weight}`;
         height.textContent = `Height: ${data.height}`;
 
         //stats
-        hp.textContent = `hp: ${data.stats[0].base_stat}`;
-        attack.textContent = `attack: ${data.stats[1].base_stat}`;
-        defense.textContent = `defense: ${data.stats[2].base_stat}`;
-        spAttack.textContent = `spAttack: ${data.stats[3].base_stat}`;
-        spDefense.textContent = `spDefense: ${data.stats[4].base_stat}`;
-        speed.textContent = `speed: ${data.stats[5].base_stat}`;
+        hp.textContent = `Hp: ${data.stats[0].base_stat}`;
+        attack.textContent = `Attack: ${data.stats[1].base_stat}`;
+        defense.textContent = `Defense: ${data.stats[2].base_stat}`;
+        spAttack.textContent = `Special-Attack: ${data.stats[3].base_stat}`;
+        spDefense.textContent = `Special-Defense: ${data.stats[4].base_stat}`;
+        speed.textContent = `Speed: ${data.stats[5].base_stat}`;
 
         //set pokemon image
         spriteContainer.innerHTML = `<img id="sprite" src="${data.sprites.front_default}">`;
 
         //set pokemon types
         types.innerHTML = data.types
-            .map((obj) => `<p>${obj.type.name}</p>`).join('');
+            .map((obj) => `<span>${obj.type.name[0].toUpperCase()}${obj.type.name.slice(1)}</span> `).join('');
     } catch (err) {
         alert("Pokémon not found");
         console.log(err);

@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokemon search App</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <h3>Pokemon Index</h3>
+        <h1>Pokemon Index</h1>
+        <label for="search-input">Search Pokemon by Name or number max#(1025)</label>
     </header>
+    <span id="search-span">
+        <input type="text" id="search-input" name="search-input" required />
+        <button id="search-button">SEARCH</button>
+    </span>
     <main>
-      <label for="search-input">Search Pokemon by Name or number max(1025)</label>
-      <input type="text" id="search-input" name="search-input" required />
+       
+        <div id="pokemon_bio">
+            <div id="pokemon-name"></div>
+            <div id="pokemon-id"></div>
+            <span id="weight"></span>
+            <span id="height"></span>
+            <div id="sprite-container"></div>
+            <div id="types"></div>
+        </div>
 
-      <button id="search-button">SEARCH</button>
-
-      <div id="pokemon_bio">
-        <div id="pokemon-name"></div> 
-        <div id="pokemon-id"></div>
-        <div id="weight"></div> 
-        <div id="height"></div>
-        <div id="sprite-container"></div>
-        <div id="types"></div>
-      </div>
-
-      <div id="pokemon_stats">
-        <div id="hp"></div> 
-        <div id="attack"></div>
-        <div id="defense"></div> 
-        <div id="special-attack"></div>
-        <div id="special-defense"></div>
-        <div id="speed"></div>
-      </div>
+        <div id="pokemon_stats">
+            <div id="hp"></div>
+            <div id="attack"></div>
+            <div id="defense"></div>
+            <div id="special-attack"></div>
+            <div id="special-defense"></div>
+            <div id="speed"></div>
+        </div>
 
     </main>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
